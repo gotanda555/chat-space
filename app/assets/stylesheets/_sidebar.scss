@@ -1,0 +1,62 @@
+.all{
+  height: 100vh;
+  width: 100vw;
+
+&__sidebar {
+  height: calc(100vh - 25px - 100px);
+  width:300px;
+  margin: 0 auto;
+  float: left;
+  text-align: left;
+  font-weight: bold;
+}
+&__sidebar__user {
+  background-color: #253141;
+  height: 100px;
+  color: $mainWhiteColor;
+  display:flex;
+  align-items:center;
+  padding: 0 20px;
+}
+&__sidebar__user__box{
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: bold;
+  box-sizing: border-box;
+  height: 20px;
+}
+&__sidebar__user__box__logo{
+  text-align: center;
+  font-size:16px;
+  line-height: 100px;
+}
+&__sidebar__user__box__icon{
+  display: block;
+}
+&__sidebar__btn {
+  display: table-cell;
+  float: right;
+  color: $mainWhiteColor;
+  padding: 0 2px 0;
+}
+&__sidebar__group {
+  background-color: #2f3e51;
+  height: 100%;
+  color: $mainWhiteColor;
+  padding: 20px 20px 0;
+}
+
+&__sidebar__group__class{
+  margin-bottom:40px;
+
+}
+
+&__sidebar__group__class__name{
+  padding: 0 0 5px;
+  font-size:15px;
+}
+&__sidebar__group__class__list{
+  font-size:11px;
+}
+}
