@@ -1,0 +1,129 @@
+.all{
+  height: 100vh;
+  width: 100vw;
+
+&__chat{
+  width:  calc(100% - 300px);
+  float: right;
+}
+&__chat__group{
+  background-color: $mainWhiteColor;
+  height: 100px;
+  padding: 0 40px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #eeeeee;
+  overflow: scroll;
+}
+&__chat__group__class{
+  margin-top:35px;
+
+}
+&__chat__group__class__name{
+  font-size:20px;
+  color:#333333;
+  padding: 0 0 15px 0;
+}
+
+&__chat__group__class__member{
+  font-size:12px;
+  color: $mainchatColor;
+}
+
+&__chat__group__edit{
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  margin-top: 30px;
+  border: solid 1px $mainblueColor;
+  position: absolute;
+  right: 40px;
+  color: $mainblueColor;
+}
+&__chat__main{
+height: calc(100vh - 288px);
+background-color: #fafafa;
+padding: 46px 40px;
+overflow: scroll;
+}
+
+&__chat__main__class{
+padding-bottom: 40px;
+}
+
+&__chat__main__class__name{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+&__chat__main__class__name__group{
+  color: $mainGlayColor;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+&__chat__main__class__name__info{
+  color: $mainchatColor;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+&__chat__main__class__message{
+  color: $mainGlayColor;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+&__chat__footer{
+  height:45px;
+  padding: 20px 40px;
+  background-color: #ddd;
+  display:  table-cell;
+  vertical-align:  middle;
+  width: 100vw;
+}
+
+&__chat__footer__class{
+  display: flex;
+}
+
+&__chat__footer__class__input{
+  position: relative;
+  width: 100%;
+  background: $mainWhiteColor;
+}
+
+&__chat__footer__class__input__message{
+  height: 50px;
+  width: 100%;
+  padding: 0 40px 0 10px;
+  color: $mainGlayColor;
+  border-style: none;
+  line-height: 50px;
+}
+
+&__chat__footer__class__input__box{
+  font-size: 1.3rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+&__chat__file{
+  display:none;
+}
+
+&__chat__btn{
+  color:#253141;
+
+}
+
+&__chat__footer__class__send{
+  height: 50px;
+  padding: 0 30px;
+  margin-left: 15px;
+  background-color: $mainblueColor;
+  color: $mainWhiteColor;
+  line-height: 50px;
+}
+}
