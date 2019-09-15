@@ -1,0 +1,18 @@
+.all__sidebar__user
+  .all__sidebar__user__box
+    .all__sidebar__user__box__logo
+      = current_user.name
+    .all__sidebar__user__box__icon
+      = link_to edit_user_path(current_user) do
+        = fa_icon 'cog', class: "all__sidebar__btn"
+      = link_to new_group_path do
+        = fa_icon 'edit', class: "all__sidebar__btn"
+  
+.all__sidebar__group
+  - current_user.groups.each do |group|
+    .all__sidebar__group__class
+      = link_to group_messages_path(group) do
+        .all__sidebar__group__class__name
+          = group.name
+        .all__sidebar__group__class__list
+          メッセージはまだありません。
