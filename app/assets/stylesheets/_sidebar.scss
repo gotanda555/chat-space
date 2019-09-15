@@ -13,7 +13,7 @@
 &__sidebar__user {
   background-color: #253141;
   height: 100px;
-  color: $mainWhiteColor;
+  color: $white;
   display:flex;
   align-items:center;
   padding: 0 20px;
@@ -29,7 +29,7 @@
 &__sidebar__user__box__logo{
   text-align: center;
   font-size:16px;
-  line-height: 100px;
+  //line-height: 100px;
 }
 &__sidebar__user__box__icon{
   display: block;
@@ -37,26 +37,34 @@
 &__sidebar__btn {
   display: table-cell;
   float: right;
-  color: $mainWhiteColor;
+  color: $white;
   padding: 0 2px 0;
 }
 &__sidebar__group {
   background-color: #2f3e51;
   height: 100%;
-  color: $mainWhiteColor;
+  color: $white;
   padding: 20px 20px 0;
 }
 
 &__sidebar__group__class{
   margin-bottom:40px;
+}
 
+a {
+	text-decoration: none ;
 }
 
 &__sidebar__group__class__name{
   padding: 0 0 5px;
   font-size:15px;
+  color: $white; 
+  text-decoration: none;
+  display:block;
 }
 &__sidebar__group__class__list{
   font-size:11px;
+  color: $white; 
+  text-decoration: none;
 }
 }

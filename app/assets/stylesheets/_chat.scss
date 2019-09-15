@@ -7,7 +7,7 @@
   float: right;
 }
 &__chat__group{
-  background-color: $mainWhiteColor;
+  background-color: $white;
   height: 100px;
   padding: 0 40px 0;
   display: flex;
@@ -27,7 +27,7 @@
 
 &__chat__group__class__member{
   font-size:12px;
-  color: $mainchatColor;
+  color: $light_gray;
 }
 
 &__chat__group__edit{
@@ -35,10 +35,10 @@
   line-height: 40px;
   padding: 0 20px;
   margin-top: 30px;
-  border: solid 1px $mainblueColor;
+  border: solid 1px $light_blue;
   position: absolute;
   right: 40px;
-  color: $mainblueColor;
+  color: $light_blue;
 }
 &__chat__main{
 height: calc(100vh - 288px);
@@ -57,19 +57,19 @@ padding-bottom: 40px;
 }
 
 &__chat__main__class__name__group{
-  color: $mainGlayColor;
+  color: $black;
   font-size: 16px;
   font-weight: bold;
 }
 
 &__chat__main__class__name__info{
-  color: $mainchatColor;
+  color: $light_gray;
   font-size: 12px;
   margin-left: 10px;
 }
 
 &__chat__main__class__message{
-  color: $mainGlayColor;
+  color: $black;
   font-size: 14px;
   margin-bottom: 10px;
 }
@@ -90,14 +90,14 @@ padding-bottom: 40px;
 &__chat__footer__class__input{
   position: relative;
   width: 100%;
-  background: $mainWhiteColor;
+  background: $white;
 }
 
 &__chat__footer__class__input__message{
   height: 50px;
   width: 100%;
   padding: 0 40px 0 10px;
-  color: $mainGlayColor;
+  color: $black;
   border-style: none;
   line-height: 50px;
 }
@@ -122,8 +122,8 @@ padding-bottom: 40px;
   height: 50px;
   padding: 0 30px;
   margin-left: 15px;
-  background-color: $mainblueColor;
-  color: $mainWhiteColor;
+  background-color: $light_blue;
+  color: $white;
   line-height: 50px;
 }
 }
