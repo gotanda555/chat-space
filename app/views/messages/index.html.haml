@@ -18,24 +18,16 @@
         Edit
 
     .all__chat__main
-      .all__chat__main__class
-        .all__chat__main__class__name
+      = render @messages
 
-          .all__chat__main__class__name__group
-            aaa
-          .all__chat__main__class__name__info
-            2019/09/10(Tue) 18:00:00
-        .all__chat__main__class__message
-          bbb
-
-    %form.all__chat__footer
-      .all__chat__footer__class
-        .all__chat__footer__class__input
-          .all__chat__footer__class__input__message
-            type a message
-          .all__chat__footer__class__input__box
-            %label.upload-label
-              = fa_icon 'image', class: "all__chat__btn--icon"
-              %input.all__chat__file{name: "message[image]",type: "file"}
-        .all__chat__footer__class__send
-          Send
+    = form_for [@group, @message] do |f|
+      .all__chat__footer
+        .all__chat__footer__class
+          .all__chat__footer__class__input
+            = f.text_field :content, class: 'all__chat__footer__class__input__message', placeholder: 'type a message'
+            .all__chat__footer__class__input__message
+              = f.label :image, class: 'all__chat__footer__class__input__box' do
+                = fa_icon 'picture-o', class: 'all__chat__btn'
+                = f.file_field :image, class: 'all__chat__file'
+          .all__chat__footer__class__send    
+            = f.submit 'Send', class: 'all__chat__footer__class__send'

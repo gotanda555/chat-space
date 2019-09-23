@@ -80,7 +80,7 @@ padding-bottom: 40px;
   background-color: #ddd;
   display:  table-cell;
   vertical-align:  middle;
-  width: 100vw;
+  width:100vw;
 }
 
 &__chat__footer__class{
@@ -89,23 +89,23 @@ padding-bottom: 40px;
 
 &__chat__footer__class__input{
   position: relative;
-  width: 100%;
   background: $white;
+  width:100%;
 }
 
 &__chat__footer__class__input__message{
-  height: 50px;
-  width: 100%;
-  padding: 0 40px 0 10px;
+  width:100%;
+  padding: 0 10px 0 10px;
   color: $black;
   border-style: none;
   line-height: 50px;
+  margin-right: 20px;
 }
 
 &__chat__footer__class__input__box{
   font-size: 1.3rem;
   position: absolute;
-  top: 10px;
+  top: 0%;
   right: 10px;
 }
 
@@ -120,10 +120,10 @@ padding-bottom: 40px;
 
 &__chat__footer__class__send{
   height: 50px;
-  padding: 0 30px;
-  margin-left: 15px;
+  margin: 0 30px 0 30px;
   background-color: $light_blue;
   color: $white;
   line-height: 50px;
+  border-color:$light_blue;
 }
 }
