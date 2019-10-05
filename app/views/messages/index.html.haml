@@ -29,5 +29,7 @@
               = f.label :image, class: 'all__chat__footer__class__input__box' do
                 = fa_icon 'picture-o', class: 'all__chat__btn'
                 = f.file_field :image, class: 'all__chat__file'
-          .all__chat__footer__class__send    
-            = f.submit 'Send', class: 'all__chat__footer__class__send'
+          .all__chat__footer__class__send
+            = f.submit 'Send', class: 'all__chat__footer__class__send', id: 'new_message'
+
+            
