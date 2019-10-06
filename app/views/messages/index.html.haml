@@ -9,13 +9,18 @@
     .all__chat__group
       .all__chat__group__class
         .all__chat__group__class__name
-          サンプル
+          = @group.name
 
         .all__chat__group__class__member
-          Member : aaaa
+          Member：
+          - @group.users.each do |user|
+            = user.name
 
       .all__chat__group__edit
-        Edit
+        = link_to edit_group_path(@group.id), class: "yoshida" do
+          Edit
+        
+
 
     .all__chat__main
       = render @messages
