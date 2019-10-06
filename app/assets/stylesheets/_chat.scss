@@ -40,6 +40,10 @@
   right: 40px;
   color: $light_blue;
 }
+
+a, .yoshida{
+  color: $light_blue;
+}
 &__chat__main{
 height: calc(100vh - 288px);
 background-color: #fafafa;
