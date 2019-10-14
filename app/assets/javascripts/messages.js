@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function(){
   function buildHTML(message){
     var img = message.image ? `<img src= ${ message.image }>` : "";
     var content = message.content ? `${ message.content }` : "";
-    var html = `  <div class="all__chat__main__class">
+    var html = `  <div class="all__chat__main__class" data-id= ${message.id} >
                     <div class="all__chat__main__class__name">
                       <p class="all__chat__main__class__name__group">
                         ${message.user_name}
@@ -50,71 +50,13 @@ $(document).on('turbolinks:load', function(){
 });
 
 
-$(function() {
-
-  var buildMessageHTML = function(message) {
-    var content = message.content ? `${ message.content }` : "";
-    var img = message.image ? `<img src= ${ message.image }>` : "";
-    if (content && img) {
-      //data-idが反映されるようにしている
-      var html = '<div class="all__chat__main__class" data-id=' + message.id + '>' +
-        '<div class="all__chat__main__class__name">' +
-          '<div class="all__chat__main__class__name__group">' +
-            message.user_name +
-          '</div>' +
-          '<div class="all__chat__main__class__name__info">' +
-          message.date +
-          '</div>' +
-        '</div>' +
-        '<div class="all__chat__main__class__message">' +
-          '<p class="lower-message__content">' +
-            content +
-          '</p>' +
-          '<img src="' + img + '" class="all__chat__main__class__message" >' +
-        '</div>' +
-      '</div>'
-    } else if (content) {
-      //同様に、data-idが反映されるようにしている
-      var html = '<div class="all__chat__main__class" data-id=' + message.id + '>' +
-        '<div class="all__chat__main__class__name">' +
-          '<div class="all__chat__main__class__name__group">' +
-            message.user_name +
-          '</div>' +
-          '<div class="all__chat__main__class__name__info">' +
-            message.date +
-          '</div>' +
-        '</div>' +
-        '<div class="all__chat__main__class__message">' +
-          '<p class="lower-message__content">' +
-            content +
-          '</p>' +
-        '</div>' +
-      '</div>'
-    } else if (img) {
-      //同様に、data-idが反映されるようにしている
-      var html = '<div class="all__chat__main__class" data-id=' + message.id + '>' +
-        '<div class="all__chat__main__class__name">' +
-          '<div class="all__chat__main__class__name__group">' +
-            message.user_name +
-          '</div>' +
-          '<div class="all__chat__main__class__name__info">' +
-            message.date +
-          '</div>' +
-        '</div>' +
-        '<div class="all__chat__main__class__message">' +
-          '<img src="' + img + '" class="all__chat__main__class__message" >' +
-        '</div>' +
-      '</div>'
-    };
-    return html;
-  };
-
 var reloadMessages = function() {
   //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
   last_message_id = $('.message:last').data('message-id');
+  group_id = $('.current-group').data('group-id')
   $.ajax({
     //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
-    url: 'api/messages#index {:format=>"json"}',
+    url: '/groups/'+ group_id +'/api/messages',
     //ルーティングで設定した通りhttpメソッドをgetに指定
     type: 'get',
     dataType: 'json',
@@ -133,6 +75,7 @@ var reloadMessages = function() {
   .fail(function() {
     alert("自動更新に失敗しました")
   })
+  setInterval(reloadMessages, 5000);
 }
-setInterval(reloadMessages, 5000);
-});
+
+
