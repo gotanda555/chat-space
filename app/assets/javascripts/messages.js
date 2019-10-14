@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function(){
   function buildHTML(message){
     var img = message.image ? `<img src= ${ message.image }>` : "";
     var content = message.content ? `${ message.content }` : "";
-    var html = `  <div class="all__chat__main__class" data-id= ${message.id} >
+    var html = `  <div class="all__chat__main__class">
                     <div class="all__chat__main__class__name">
                       <p class="all__chat__main__class__name__group">
                         ${message.user_name}
@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', function(){
                         ${message.date}
                         </p>
                         </div>
-                    <div class="all__chat__main__class__message">
+                    <div class="all__chat__main__class__message" data-message-id= ${message.id} >
                       <div class=lower-message_content>
                       ${content}
                       </div>
@@ -47,13 +47,10 @@ $(document).on('turbolinks:load', function(){
     $('.all__chat__footer__class__send').prop('disabled', false);
   })
 })
-});
-
-
 var reloadMessages = function() {
   //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-  last_message_id = $('.message:last').data('message-id');
-  group_id = $('.current-group').data('group-id')
+  last_message_id = $('.all__chat__main__class__message:last').data('message-id');
+  group_id = $('.all__chat__group__edit').data('group-id')
   $.ajax({
     //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
     url: '/groups/'+ group_id +'/api/messages',
@@ -75,7 +72,9 @@ var reloadMessages = function() {
   .fail(function() {
     alert("自動更新に失敗しました")
   })
-  setInterval(reloadMessages, 5000);
 }
+setInterval(reloadMessages, 5000);
+});
+
 
 
