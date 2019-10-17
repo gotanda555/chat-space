@@ -47,8 +47,11 @@ $(document).on('turbolinks:load', function(){
     $('.all__chat__footer__class__send').prop('disabled', false);
   })
 })
+
+
 var reloadMessages = function() {
   //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+  //if 
   last_message_id = $('.all__chat__main__class__message:last').data('message-id');
   group_id = $('.all__chat__group__edit').data('group-id')
   $.ajax({
