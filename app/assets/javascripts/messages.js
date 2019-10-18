@@ -51,7 +51,7 @@ $(document).on('turbolinks:load', function(){
 
 var reloadMessages = function() {
   //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-  //if 
+  if(document.URL.match("/messages")) {
   last_message_id = $('.all__chat__main__class__message:last').data('message-id');
   group_id = $('.all__chat__group__edit').data('group-id')
   $.ajax({
@@ -75,6 +75,7 @@ var reloadMessages = function() {
   .fail(function() {
     alert("自動更新に失敗しました")
   })
+}
 }
 setInterval(reloadMessages, 5000);
 });
